@@ -186,3 +186,11 @@ add_action('widgets_init', function () {
         'id' => 'sidebar-footer'
     ] + $config);
 });
+
+
+
+
+// Full Site Editing/FSE support
+add_action('after_setup_theme', function () {
+    add_theme_support('block-templates');
+});
