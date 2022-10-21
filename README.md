@@ -2,7 +2,7 @@
 
 ## Requirements
 
-Gutenberg Plugin is not required but adds extra Gutenberg-specific functionality.
+- Gutenberg Plugin is not required, but adds extra Gutenberg-specific functionality that is missed otherwise in WordPress core.
 
 ## Theme installation
 
@@ -13,8 +13,9 @@ Gutenberg Plugin is not required but adds extra Gutenberg-specific functionality
 5. Invoke `npm run build`.
 6. (Mount the theme into a WordPress site and activate it).
 7. Open the Site Editor:
-  a. Admin area → Appearance → Edit (beta)
-  b. (Logged in as editor+) → Front end → Admin bar → Edit Site
+
+- Admin area → Appearance → Edit (beta)
+- (Logged in as editor+) → Front end → Admin bar → Edit Site
 
 ## Theme structure
 
