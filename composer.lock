@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "25ed905d20b9e560b202aea4a719438a",
+    "content-hash": "ff470b5be33c2853a19dd5e5544e072a",
     "packages": [
         {
             "name": "brick/math",
@@ -1896,16 +1896,16 @@
         },
         {
             "name": "roots/acorn",
-            "version": "v2.1.2",
+            "version": "dev-patch-2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/roots/acorn.git",
-                "reference": "82649f7b8b4916da7fb63b202b4e3c8024178dbd"
+                "url": "https://github.com/strarsis/acorn.git",
+                "reference": "257db9cc4521495512f86a05b5ffa4fae692ebab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roots/acorn/zipball/82649f7b8b4916da7fb63b202b4e3c8024178dbd",
-                "reference": "82649f7b8b4916da7fb63b202b4e3c8024178dbd",
+                "url": "https://api.github.com/repos/strarsis/acorn/zipball/257db9cc4521495512f86a05b5ffa4fae692ebab",
+                "reference": "257db9cc4521495512f86a05b5ffa4fae692ebab",
                 "shasum": ""
             },
             "require": {
@@ -1948,16 +1948,34 @@
             },
             "type": "library",
             "autoload": {
-                "files": [
-                    "src/Roots/helpers.php",
-                    "src/Roots/globals.php"
-                ],
                 "psr-4": {
                     "Roots\\": "src/Roots/",
                     "Illuminate\\": "src/Illuminate/"
+                },
+                "files": [
+                    "src/Roots/helpers.php",
+                    "src/Roots/globals.php"
+                ]
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Roots\\Acorn\\Tests\\": "tests"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "scripts": {
+                "lint": [
+                    "phpcs"
+                ],
+                "lint:fix": [
+                    "phpcbf"
+                ],
+                "test": [
+                    "pest"
+                ],
+                "coverage": [
+                    "XDEBUG_MODE=coverage pest --coverage --coverage-html=coverage"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -1978,21 +1996,11 @@
                 "wordpress"
             ],
             "support": {
-                "forum": "https://discourse.roots.io/",
                 "issues": "https://github.com/roots/acorn/issues",
-                "source": "https://github.com/roots/acorn/tree/v2.1.2"
+                "forum": "https://discourse.roots.io/",
+                "source": "https://github.com/strarsis/acorn/tree/patch-2"
             },
-            "funding": [
-                {
-                    "url": "https://github.com/roots",
-                    "type": "github"
-                },
-                {
-                    "url": "https://www.patreon.com/rootsdev",
-                    "type": "patreon"
-                }
-            ],
-            "time": "2022-07-17T19:11:26+00:00"
+            "time": "2022-10-21T21:24:40+00:00"
         },
         {
             "name": "roots/support",
@@ -4223,7 +4231,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "roots/acorn": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
