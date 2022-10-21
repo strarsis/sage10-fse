@@ -13,9 +13,8 @@
 5. Invoke `npm run build`.
 6. (Mount the theme into a WordPress site and activate it).
 7. Open the Site Editor:
-
-- Admin area → Appearance → Edit (beta)
-- (Logged in as editor+) → Front end → Admin bar → Edit Site
+  - Admin area → Appearance → Edit (beta)
+  - (Logged in as editor+) → Front end → Admin bar → Edit Site
 
 ## Theme structure
 
