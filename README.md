@@ -21,8 +21,9 @@
 ```sh
 themes/your-theme-name/   # → Root of your Sage based theme
 ├── templates/            # → Block templates (required for a FSE theme) (formerly named `block-templates`)
-│   ├── page.html         # → Block template for page
-│   └── index.html        # → Block template for front page
+│   ├── page.html         # → Block template for singular page
+│   ├── index.html        # → Block template for the posts
+│   └── home.html         # → Block template for front page
 ├── parts/                # → Block parts (can be used in block templates, among others) (formerly named `block-parts`)
 │   ├── header.html       # → Block part for a header (there can be more headers, if needed)
 │   └── footer.html       # → Block part for a footer (there can be more footers, if needed)
