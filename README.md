@@ -47,6 +47,6 @@ Block template or block parts contain plain, "naked" HTML without block-specific
 - <https://github.com/bobbingwide/sb/issues/6>
 
 ## Customization by user
-By default the user can override the theme templates, those modifications are stored as special posts in database.
+By default the user can override the theme-provided block templates and block parts, those modifications are stored as special posts in database.
 The site editor sidebar can be opened by clicking on the logo/icon on the upper left corner in the side editor.
-From that sidebar the templates and template parts can be opened and the user customizations can be reset there.
+From that sidebar the block templates and template parts lists can be viewed and the user customizations reset.
