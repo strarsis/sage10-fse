@@ -3,6 +3,7 @@
 ## Requirements
 
 - Gutenberg Plugin is not required, but adds extra Gutenberg-specific functionality that is missed otherwise in WordPress core.
+- A [patched `roots/acorn` package](https://github.com/roots/acorn/pull/141) is used by the theme as theme runtime dependency which loader preserves the block template paths.
 
 ## Theme installation
 
