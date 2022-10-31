@@ -24,7 +24,8 @@ themes/your-theme-name/   # → Root of your Sage based theme
 ├── templates/            # → Block templates (required for a FSE theme) (formerly named `block-templates`)
 │   ├── page.html         # → Block template for singular page
 │   ├── index.html        # → Block template for the posts
-│   └── home.html         # → Block template for front page
+│   ├── home.html         # → Block template for posts page
+│   └── front-page.html   # → Block template for front page
 ├── parts/                # → Block parts (can be used in block templates, among others) (formerly named `block-parts`)
 │   ├── header.html       # → Block part for a header (there can be more headers, if needed)
 │   └── footer.html       # → Block part for a footer (there can be more footers, if needed)
@@ -51,3 +52,8 @@ Block template or block parts contain plain, "naked" HTML without block-specific
 By default the user can override the theme-provided block templates and block parts, those modifications are stored as special posts in database.
 The site editor sidebar can be opened by clicking on the logo/icon on the upper left corner in the side editor.
 From that sidebar the block templates and template parts lists can be viewed and the user customizations reset.
+
+## Home versus Front page templates
+This was a gotcha for me, as I first hadn't completely understood the exact difference between those two.
+This very well made article explains the differences:
+https://davidsutoyo.com/articles/difference-front-page-php-home-php/
