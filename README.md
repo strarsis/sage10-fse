@@ -22,8 +22,8 @@
 ```sh
 themes/your-theme-name/   # → Root of your Sage based theme
 ├── templates/            # → Block templates directory (❗required for a FSE theme (for the `index.php` inside)) (formerly named `block-templates`)
-│   ├── page.html         # → Block template for singular page
-│   ├── index.html        # → Block template for the posts (fallback) (❗required for a FSE theme)
+│   ├── page.html         # → Block template for the posts (fallback) (❗required for a FSE theme)
+│   ├── index.html        # → Block template for singular page
 │   ├── home.html         # → Block template for posts page (specific page selected as blog page)
 │   └── front-page.html   # → Block template for front page (specific page selected as front page)
 ├── parts/                # → Block parts directory (can be used in block templates, among others) (formerly named `block-parts`)
