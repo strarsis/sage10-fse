@@ -42,7 +42,7 @@ themes/your-theme-name/   # → Root of your Sage based theme
 
 ## Known issues and fixes
 
-### Template part blocks can't render; `Cannot read properties of undefined (reading 'tinymce'`
+### Template part blocks can't render; JavaScript error `Cannot read properties of undefined (reading 'tinymce' [...]` in Gutenberg Editor
 
 Block template or block parts contain plain, "naked" HTML without block-specific comments.
 
@@ -61,7 +61,7 @@ This was a gotcha for me, as I first hadn't completely understood the exact diff
 This very well made article explains the differences:
 https://davidsutoyo.com/articles/difference-front-page-php-home-php/
 
-### JavaScript errors like `Block "core/post-comments" is not registered` in Gutenberg Editor
+### JavaScript errors like `Block "core/post-comments" is not registered` (for some core blocks) in Gutenberg Editor
 The [`Disable Comments Plugin`](https://wordpress.org/plugins/disable-comments/) may cause this as it can also remove the comment-specific core blocks (which makes sense).
 
 ### The Gutenberg Editor page loads but stays blank
