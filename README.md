@@ -37,7 +37,7 @@ themes/your-theme-name/   # → Root of your Sage based theme
 ## Notes
 
 - `add_theme_support('block-templates');` is not needed when theme is already autodetected to be a FSE theme (by presence of `theme.json` and `templates/`).
-- Disabling FSE using `remove_theme_support('block-templates')` is ignored when block templates are in place.
+- Disabling FSE using `remove_theme_support('block-templates')` is ignored when block templates are in place, `Design → Editor` is still offered to the user. – But this will currently result in an [unexpected, non-JSON-, HTML-response for `_wp-find-template`](https://github.com/WordPress/gutenberg/issues/45170#issuecomment-1287434694), preventing the Gutenberg Editor from initializing, hence the Gutenberg Editor page stays blank.
 - Block styles currently can't be registered by convention (as by adding them as files into a specific folder, using meta data as comments/JSON, as this is already possible with block patterns). – Currently block styles can only be registered using [`register_block_style`](https://developer.wordpress.org/reference/functions/register_block_style/) (in server-side PHP) or [`registerBlockStyle`](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-styles/) (in editor JavaScript). This can change with future releases of Gutenberg and WordPress core.
 
 ## Known issues and fixes
@@ -65,4 +65,6 @@ https://davidsutoyo.com/articles/difference-front-page-php-home-php/
 The [`Disable Comments Plugin`](https://wordpress.org/plugins/disable-comments/) may cause this as it can also remove the comment-specific core blocks (which makes sense).
 
 ### The Gutenberg Editor page loads but stays blank
-This happens when the backend sends an unexpected response (invalid JSON (so also just frontend HTML) or no response. The Gutenberg Editor [currently catches any JSON parse errors and silently stops initializing](https://github.com/WordPress/gutenberg/issues/45170) (staying blank). Adding or changing the order of template loaders can cause this, hence this example Sage 10 FSE theme uses a patched version of the Sage theme `acorn` runtime that doesn't respond [with a matching Blade-PHP non-block template](https://github.com/roots/acorn/issues/228).
+This happens when the backend sends an unexpected response (invalid JSON (so also just frontend HTML) or no response. The Gutenberg Editor [currently catches any JSON parse errors and silently stops initializing](https://github.com/WordPress/gutenberg/issues/45170) (staying blank). 
+Adding or changing the order of template loaders can cause this, hence this example Sage 10 FSE theme uses a patched version of the Sage theme `acorn` runtime that doesn't respond [with a matching Blade-PHP non-block template](https://github.com/roots/acorn/issues/228).
+Also [disabling FSE using `remove_theme_support('block-templates')` in a FSE theme](https://github.com/WordPress/gutenberg/issues/45170#issuecomment-1287434694) causes this.
