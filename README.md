@@ -38,6 +38,7 @@ themes/your-theme-name/   # → Root of your Sage based theme
 
 - `add_theme_support('block-templates');` is not needed when theme is already autodetected to be a FSE theme (by presence of `theme.json` and `templates/`).
 - Disabling FSE using `remove_theme_support('block-templates')` is ignored when block templates are in place.
+- Block styles currently can't be registered by convention (as by adding them as files into a specific folder, using meta data as comments/JSON, as this is already possible with block patterns). – Currently block styles can only be registered using [`register_block_style`](https://developer.wordpress.org/reference/functions/register_block_style/) (in server-side PHP) or [`registerBlockStyle`](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-styles/) (in editor JavaScript). This can change with future releases of Gutenberg and WordPress core.
 
 ## Known issues and fixes
 
