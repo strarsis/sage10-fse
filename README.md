@@ -67,4 +67,4 @@ The [`Disable Comments Plugin`](https://wordpress.org/plugins/disable-comments/)
 ### The Gutenberg Editor page loads but stays blank
 This happens when the backend sends an unexpected response (invalid JSON (so also just frontend HTML) or no response. The Gutenberg Editor [currently catches any JSON parse errors and silently stops initializing](https://github.com/WordPress/gutenberg/issues/45170) (staying blank). 
 Adding or changing the order of template loaders can cause this, hence this example Sage 10 FSE theme uses a patched version of the Sage theme `acorn` runtime that doesn't respond [with a matching Blade-PHP non-block template](https://github.com/roots/acorn/issues/228).
-Also [disabling FSE using `remove_theme_support('block-templates')` in a FSE theme](https://github.com/WordPress/gutenberg/issues/45170#issuecomment-1287434694) causes this.
+Also the aforementioned [disabling FSE using `remove_theme_support('block-templates')` in a FSE theme](https://github.com/WordPress/gutenberg/issues/45170#issuecomment-1287434694) causes this.
