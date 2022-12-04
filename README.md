@@ -60,3 +60,6 @@ From that sidebar the block templates and template parts lists can be viewed and
 This was a gotcha for me, as I first hadn't completely understood the exact difference between those two.
 This very well made article explains the differences:
 https://davidsutoyo.com/articles/difference-front-page-php-home-php/
+
+## JavaScript errors like `Block "core/post-comments" is not registered` in Gutenberg Editor
+The [`Disable Comments Plugin`](https://wordpress.org/plugins/disable-comments/) may cause this as it can also remove the comment-specific core blocks (which makes sense).
