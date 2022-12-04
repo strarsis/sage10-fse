@@ -64,9 +64,11 @@ https://davidsutoyo.com/articles/difference-front-page-php-home-php/
 
 ### Gutenberg Editor/JavaScript errors like `Block "core/post-comments" is not registered` (for _comment_-specific core blocks)
 The [`Disable Comments Plugin`](https://wordpress.org/plugins/disable-comments/) may cause this as it can also remove the comment-specific core blocks.
+Note: In block templates those blocks have markup as `<!-- wp:post-comment`.
 
 ### Gutenberg Editor/JavaScript errors like `Block "core/post-title" is not registered` (for _blog-_/_post_-specific core blocks)
 The [`Disable Blog Plugin`](https://wordpress.org/plugins/disable-blog/) may cause this as it can also remove the blog-/post-specific core blocks.
+Note: In block templates those blocks have markup as `<!-- wp:post-title`.
 
 ### The Gutenberg Editor page loads but stays blank
 This happens when the backend sends an unexpected response (invalid JSON (so also just frontend HTML) or no response. The Gutenberg Editor [currently catches any JSON parse errors and silently stops initializing](https://github.com/WordPress/gutenberg/issues/45170) (staying blank). 
