@@ -61,10 +61,10 @@ This was a gotcha for me, as I first hadn't completely understood the exact diff
 This very well made article explains the differences:
 https://davidsutoyo.com/articles/difference-front-page-php-home-php/
 
-### Gutenberg Editor/JavaScript errors like `Block "core/post-comments" is not registered` (for _comment_-specific core blocks) in Gutenberg Editor
+### Gutenberg Editor/JavaScript errors like `Block "core/post-comments" is not registered` (for _comment_-specific core blocks)
 The [`Disable Comments Plugin`](https://wordpress.org/plugins/disable-comments/) may cause this as it can also remove the comment-specific core blocks.
 
-### Gutenberg Editor/JavaScript errors like `Block "core/post-title" is not registered` (for _blog-_/_post_-specific core blocks) in Gutenberg Editor
+### Gutenberg Editor/JavaScript errors like `Block "core/post-title" is not registered` (for _blog-_/_post_-specific core blocks)
 The [`Disable Blog Plugin`](https://wordpress.org/plugins/disable-blog/) may cause this as it can also remove the blog-/post-specific core blocks.
 
 ### The Gutenberg Editor page loads but stays blank
