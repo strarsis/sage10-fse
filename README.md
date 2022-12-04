@@ -63,3 +63,6 @@ https://davidsutoyo.com/articles/difference-front-page-php-home-php/
 
 ## JavaScript errors like `Block "core/post-comments" is not registered` in Gutenberg Editor
 The [`Disable Comments Plugin`](https://wordpress.org/plugins/disable-comments/) may cause this as it can also remove the comment-specific core blocks (which makes sense).
+
+## The Gutenberg Editor page loads but stays blank
+This happens when the backend sends an unexpected response (invalid JSON (so also just frontend HTML) or no response. The Gutenberg Editor [currently catches any JSON parse errors and silently stops initializing](https://github.com/WordPress/gutenberg/issues/45170) (staying blank). Adding or changing the order of template loaders can cause this, hence this example Sage 10 FSE theme uses a patched version of the Sage theme `acorn` runtime that doesn't respond [with a matching Blade-PHP non-block template](https://github.com/roots/acorn/issues/228).
