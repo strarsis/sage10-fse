@@ -7,6 +7,7 @@
 namespace App;
 
 use function Roots\bundle;
+use function Roots\asset;
 
 /**
  * Register the theme assets.
@@ -25,6 +26,18 @@ add_action('wp_enqueue_scripts', function () {
 add_action('enqueue_block_editor_assets', function () {
     bundle('editor')->enqueue();
 }, 100);
+
+/*
+ * Add frontend styles as editor styles.
+ * Must be added by relative path (not remote URI)
+ * (@see https://core.trac.wordpress.org/ticket/55728#ticket).
+ * 
+ * @return void
+ */
+add_action('after_setup_theme', function () {
+    $relAppCssPath = asset('app.css')->relativePath(get_theme_file_path());
+    add_editor_style($relAppCssPath);
+});
 
 /**
  * Register the initial theme setup.
