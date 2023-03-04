@@ -72,5 +72,21 @@ export default async (app) => {
       .useTailwindColors()
       .useTailwindFontFamily()
       .useTailwindFontSize()
+
+
+      .setOption('templateParts', [
+        {
+          "name": "header",
+          "title": "Header",
+          "area": "header",
+        },
+
+        {
+          "name": "footer",
+          "title": "Footer",
+          "area": "footer",
+        }
+      ])
+
       .enable()
 };
