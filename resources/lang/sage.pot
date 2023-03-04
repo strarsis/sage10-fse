@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-03-04T19:24:20+01:00\n"
+"POT-Creation-Date: 2023-03-04T19:50:37+01:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: sage\n"
@@ -1349,4 +1349,9 @@ msgstr ""
 #: theme.json
 msgctxt "Template part name"
 msgid "Footer"
+msgstr ""
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Generic example"
 msgstr ""

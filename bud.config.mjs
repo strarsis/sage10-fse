@@ -85,6 +85,12 @@ export default async (app) => {
           "name": "footer",
           "title": "Footer",
           "area": "footer",
+        },
+
+        {
+          "name": "example",
+          "title": "Generic example",
+          //"area": "uncategorized", // (empty default is `uncategorized`)
         }
       ])
 
