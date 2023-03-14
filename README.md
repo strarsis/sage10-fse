@@ -10,12 +10,13 @@
 1. Clone this repository.
 2. Invoke `composer install`.
 3. (Optional) Ensure suitable `node` version, e.g. using `nvm` from the `.nvmrc` by invoking `nvm install && nvm use`.
-4. Invoke `npm install`.
-5. Invoke `npm run build`.
-6. (Mount the theme into a WordPress site and activate it).
-7. Open the Site Editor:
-  - Admin area → Appearance → Edit (beta)
-  - (Logged in as editor+) → Front end → Admin bar → Edit Site
+4. Invoke either `npm install` or `yarn install` (`npm install -g yarn` for installing/updating yarn classic (`1.x`)).
+5. (Remove either `yarn.lock` or `package-lock.json`, depending on the package manager you are using, as `bud` will not build otherwise in order to prevent potential issues.)
+6. Invoke `npm run build`.
+7. (Mount the theme into a WordPress site and activate it).
+8. Open the Site Editor:
+  - Admin area → `Appearance` → `Editor (beta)`
+  - (Logged in as `editor`+) → Front end → Admin bar → `Edit site`
 
 ## Theme structure
 
@@ -44,6 +45,7 @@ This allows the theme to be agnostic towards the technique with which the Gutenb
 - Disabling FSE using `remove_theme_support('block-templates')` is ignored when block templates are in place, `Design → Editor` is still offered to the user. – But this will currently result in an [unexpected, non-JSON-, HTML-response for `_wp-find-template`](https://github.com/WordPress/gutenberg/issues/45170#issuecomment-1287434694), preventing the Gutenberg Editor from initializing, hence the Gutenberg Editor page stays blank.
 - Block styles currently can't be registered by convention (as by adding them as files into a specific folder, using meta data as comments/JSON, as this is already possible with block patterns). – Currently block styles can only be registered using [`register_block_style`](https://developer.wordpress.org/reference/functions/register_block_style/) (in server-side PHP) or [`registerBlockStyle`](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-styles/) (in editor JavaScript). This can change with future releases of Gutenberg and WordPress core.
 - Get the translation source strings using the WP CLI [`i18n`](https://developer.wordpress.org/cli/commands/i18n/), as this tool is able to parse not only the normal core PHP WordPress translation functions, but also all the metadata in `theme.json`; Block patterns and Block parts for color, font-size, block part names, etc. – And recently it can also parse [Blade-PHP template files](https://github.com/wp-cli/i18n-command/pull/304). Sage 10 already uses these for its [translation-related `npm` scripts](https://github.com/strarsis/sage10-fse/blob/master/package.json#L14).
+- In case you are wondering why no page header/footer is visible, this depends on the WordPress Reading settings (`Your latest post` or `A static page` under `Settings` → `Reading` → `Your homepage displays`).
 
 ## Known issues and fixes
 
