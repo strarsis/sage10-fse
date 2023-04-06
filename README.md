@@ -6,7 +6,7 @@
 - A [patched `roots/acorn` package](https://github.com/roots/acorn/pull/141) is used by the theme as theme runtime dependency (in theme [`composer.json`](https://github.com/strarsis/sage10-fse/blob/master/composer.json#L43-L49)) which loader preserves the block template paths.
 
 ## Please note
-***Double-check whether `remove_theme_support('block-templates')` is not in your theme, as otherwise FSE will not work.***
+***Double-check whether `remove_theme_support('block-templates')` is absent from your theme setup, as otherwise FSE will not work.***
 
 ## Theme installation
 
