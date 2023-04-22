@@ -43,16 +43,16 @@ themes/your-theme-name/   # → Root of your Sage based theme
 
 - You can [register the frontend styles as editor styles](https://github.com/strarsis/sage10-fse/blob/master/app/setup.php#L30-L40), then Gutenberg Editor will automatically post-process those styles and wrap all selectors in `.editor-styles-wrapper` for proper styles isolation (which prevents those frontend styles leaking into the editor UI itself). The editor styles are added as they are/were added to the TinyMCE editor (WordPress Classic Editor).
 This allows the theme to be agnostic towards the technique with which the Gutenberg editor isolates the frontend styles (from its UI). This becomes more important now as in the near future Gutenberg will use `iframe`s. Therefore hardcoded style isolation (by prefixing a editor-styles-wrapper CSS class selector) would then either be unnecessary or even require additional post-processing which itself was thought to avoid in the first place.
-- You can also add editor-specific styles for adjusting the DOM elements added by the editor or the editor UI itself (for specific fixes). Those editor styles, even if they may be named "editor styles", wouldn't be added as editor style (as it is called in WordPress) in a technical sense, but rather just [enqueued on the admin/backend editor pages](https://github.com/strarsis/sage10-fse/blob/master/app/setup.php#L21-L28) as normal styles (which wouldn't be post-processed and hence isolated by Gutenberg editor either) (as by using `enqueue_block_editor_assets`).
+- You can also add editor-specific styles for adjusting the DOM elements added by the editor or the editor UI itself (for specific fixes). Those editor styles, even if they may be named "editor styles", wouldn't be added as editor style (as it is called in WordPress) in a technical sense, but rather just [enqueued on the admin/backend editor pages](https://github.com/strarsis/sage10-fse/blob/master/app/setup.php#L21-L28) as normal styles (which would not be post-processed and hence isolated by Gutenberg editor either) (as by using `enqueue_block_editor_assets`).
 - `add_theme_support('block-templates')` is not needed when theme is already autodetected to be a FSE theme (by presence of `theme.json` and `templates/`).
 - Disabling FSE using `remove_theme_support('block-templates')` is ignored when block templates are in place, `Design → Editor` is still offered to the user. – But this will currently result in an [unexpected, non-JSON-, HTML-response for `_wp-find-template`](https://github.com/WordPress/gutenberg/issues/45170#issuecomment-1287434694), preventing the Gutenberg Editor from initializing, hence the Gutenberg Editor page stays blank.
-- Block styles currently can't be registered by convention (as by adding them as files into a specific folder, using meta data as comments/JSON, as this is already possible with block patterns). – Currently block styles can only be registered using [`register_block_style`](https://developer.wordpress.org/reference/functions/register_block_style/) (in server-side PHP; recommended `init` action hook) or [`registerBlockStyle`](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-styles/) (in editor JavaScript). This can change with future releases of Gutenberg and WordPress core.
+- Block styles currently can not be registered by convention (as by adding them as files into a specific folder, using meta data as comments/JSON, as this is already possible with block patterns). – Currently block styles can only be registered using [`register_block_style`](https://developer.wordpress.org/reference/functions/register_block_style/) (in server-side PHP; recommended `init` action hook) or [`registerBlockStyle`](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-styles/) (in editor JavaScript). This can change with future releases of Gutenberg and WordPress core.
 - Get the translation source strings using the WP CLI [`i18n`](https://developer.wordpress.org/cli/commands/i18n/), as this tool is able to parse not only the normal core PHP WordPress translation functions, but also all the metadata in `theme.json`; Block patterns and Block parts for color, font-size, block part names, etc. – And recently it can also parse [Blade-PHP template files](https://github.com/wp-cli/i18n-command/pull/304). Sage 10 already uses these for its [translation-related `npm` scripts](https://github.com/strarsis/sage10-fse/blob/master/package.json#L14).
 - In case you are wondering why no page header/footer is visible, this depends on the WordPress Reading settings (`Your latest post` or `A static page` under `Settings` → `Reading` → `Your homepage displays`).
 
 ## Known issues and fixes
 
-### Template part blocks can't render; JavaScript error `Cannot read properties of undefined (reading 'tinymce' [...]` in Gutenberg Editor
+### Template part blocks can not render; JavaScript error `Cannot read properties of undefined (reading 'tinymce' [...]` in Gutenberg Editor
 
 Block template or block parts contain plain, "naked" HTML without block-specific comments.
 
@@ -62,12 +62,12 @@ Block template or block parts contain plain, "naked" HTML without block-specific
 - <https://github.com/bobbingwide/sb/issues/6>
 
 ### Customization by user
-By default the user can override the theme-provided block templates and block parts, those modifications are stored as special posts in database.
+By default, the user can override the theme-provided block templates and block parts, those modifications are stored as special posts in database.
 The site editor sidebar can be opened by clicking on the logo/icon on the upper left corner in the side editor.
 From that sidebar the block templates and template parts lists can be viewed and the user customizations reset.
 
 ### Home versus Front page templates
-This was a gotcha for me, as I first hadn't completely understood the exact difference between those two.
+This was a gotcha for me, as I first had not completely understood the exact difference between those two.
 This very well made article explains the differences:
 https://davidsutoyo.com/articles/difference-front-page-php-home-php/
 
@@ -81,5 +81,5 @@ Note: In block templates those blocks have markup as `<!-- wp:post-title`.
 
 ### The Gutenberg Editor page loads but stays blank!
 This happens when the backend sends an unexpected response (invalid JSON (so also just frontend HTML) or no response. The Gutenberg Editor [currently catches any JSON parse errors and silently stops initializing](https://github.com/WordPress/gutenberg/issues/45170) (staying blank). 
-Adding or changing the order of template loaders can cause this, hence this example Sage 10 FSE theme uses a patched version of the Sage theme `acorn` runtime that doesn't respond [with a matching Blade-PHP non-block template](https://github.com/roots/acorn/issues/228).
+Adding or changing the order of template loaders can cause this, hence this example Sage 10 FSE theme uses a patched version of the Sage theme `acorn` runtime that does not respond [with a matching Blade-PHP non-block template](https://github.com/roots/acorn/issues/228).
 Also the aforementioned [disabling FSE using `remove_theme_support('block-templates')` in a FSE theme](https://github.com/WordPress/gutenberg/issues/45170#issuecomment-1287434694) causes this.
