@@ -8,6 +8,7 @@
 
 ### Optional
 - The [Gutenberg Plugin](https://wordpress.org/plugins/gutenberg/) is not required, but adds extra Gutenberg-specific functionality that is missed otherwise in WordPress core.
+On a `roots.io` Bedrock site you usually would add the plugin to the Bedrock site (not the theme!) `composer.json` as a [WPackagist dependency](https://wpackagist.org/search?q=gutenberg&type=plugin).
 
 ## Please note
 ***Double-check whether `remove_theme_support('block-templates')` is absent from your theme setup, as otherwise FSE will not work.***
