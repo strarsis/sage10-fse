@@ -2,8 +2,12 @@
 
 ## Requirements
 
-- The [Gutenberg Plugin](https://wordpress.org/plugins/gutenberg/) is not required, but adds extra Gutenberg-specific functionality that is missed otherwise in WordPress core.
 - A [patched `roots/acorn` package](https://github.com/roots/acorn/pull/141) is used by the theme as theme runtime dependency (in theme [`composer.json`](https://github.com/strarsis/sage10-fse/blob/master/composer.json#L43-L49)) which loader preserves the block template paths.
+- `remove_theme_support('block-templates')` must be absent, as FSE will not work otherwise (important).
+- `templates/` directory, `index.html` and `theme.json` (see the [FSE-specific theme files](#theme-structure) below).
+
+### Optional
+- The [Gutenberg Plugin](https://wordpress.org/plugins/gutenberg/) is not required, but adds extra Gutenberg-specific functionality that is missed otherwise in WordPress core.
 
 ## Please note
 ***Double-check whether `remove_theme_support('block-templates')` is absent from your theme setup, as otherwise FSE will not work.***
