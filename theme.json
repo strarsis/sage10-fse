@@ -1260,5 +1260,11 @@
       "name": "example",
       "title": "Generic example"
     }
+  ],
+  "customTemplates": [
+    {
+      "name": "page-without-header",
+      "title": "Page without header"
+    }
   ]
 }

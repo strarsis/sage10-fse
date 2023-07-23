@@ -100,7 +100,15 @@ export default async (app) => {
         "name": "example",
         "title": "Generic example",
         //"area": "uncategorized", // (empty default is `uncategorized`)
-      }
+      },
+    ])
+
+    .setOption('customTemplates', [
+      {
+        "name":  "page-without-header",
+        "title": "Page without header",
+        // description currently not supported (@see https://github.com/WordPress/gutenberg/issues/44097)
+      },
     ])
 
 

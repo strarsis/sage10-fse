@@ -2,14 +2,14 @@
 # This file is distributed under the MIT License.
 msgid ""
 msgstr ""
-"Project-Id-Version: Sage Starter Theme 10.3.1\n"
+"Project-Id-Version: Sage Starter Theme 10.5.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/sage10-fse\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-03-04T19:50:37+01:00\n"
+"POT-Creation-Date: 2023-07-23T12:18:24+02:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: sage\n"
@@ -38,15 +38,15 @@ msgstr ""
 msgid "Continued"
 msgstr ""
 
-#: app/setup.php:73
+#: app/setup.php:72
 msgid "Primary Navigation"
 msgstr ""
 
-#: app/setup.php:141
+#: app/setup.php:140
 msgid "Primary"
 msgstr ""
 
-#: app/setup.php:146
+#: app/setup.php:145
 msgid "Footer"
 msgstr ""
 
@@ -1354,4 +1354,9 @@ msgstr ""
 #: theme.json
 msgctxt "Template part name"
 msgid "Generic example"
+msgstr ""
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Page without header"
 msgstr ""
