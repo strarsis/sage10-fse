@@ -3276,6 +3276,13 @@ browserslist@^4.21.5:
     node-releases "^2.0.8"
     update-browserslist-db "^1.0.10"
 
+bud-wp-editor-query@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.npmjs.org/bud-wp-editor-query/-/bud-wp-editor-query-0.0.4.tgz"
+  integrity sha512-MzLW7RpOq3Qx+p4wFbp8JL8TidJ5JYvBl6dB0jNtKNgEEfOyOkZjlnQAHQmpm1ZrLBqsN1jUkYjt+Q7nskLTNw==
+  dependencies:
+    css-mediaquery "^0.1.2"
+
 buffer-from@^1.0.0:
   version "1.1.2"
   resolved "https://registry.npmjs.org/buffer-from/-/buffer-from-1.1.2.tgz"
@@ -3705,6 +3712,11 @@ css-loader@^6.7.3:
     postcss-modules-values "^4.0.0"
     postcss-value-parser "^4.2.0"
     semver "^7.3.8"
+
+css-mediaquery@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.npmjs.org/css-mediaquery/-/css-mediaquery-0.1.2.tgz"
+  integrity sha512-COtn4EROW5dBGlE/4PiKnh6rZpAPxDeFLaEEwt4i10jpDMFt2EhQGS79QmmrO+iKCHv0PU/HrOWEhijFd1x99Q==
 
 css-minimizer-webpack-plugin@4.2.2:
   version "4.2.2"
