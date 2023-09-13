@@ -34,6 +34,10 @@ add_action('enqueue_block_editor_assets', function () {
  * @return void
  */
 add_action('after_setup_theme', function () {
+    // add app frontend styles as editor styles
+    $relAppCssPath = asset('app.css')->relativePath(get_theme_file_path());
+    add_editor_style($relAppCssPath);
+
     // enqueue editor-only styles, extracted from frontend styles
     $relEditorAppOnlyCssAsset = asset('editor/app.css');
     $relEditorAppOnlyCssPath  = $relEditorAppOnlyCssAsset->relativePath(get_theme_file_path());
