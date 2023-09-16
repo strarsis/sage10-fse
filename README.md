@@ -87,6 +87,9 @@ Note: In block templates those blocks have markup as `<!-- wp:post-comment`.
 The [`Disable Blog Plugin`](https://wordpress.org/plugins/disable-blog/) may cause this as it can also remove the blog-/post-specific core blocks.
 Note: In block templates those blocks have markup as `<!-- wp:post-title`.
 
+### PHP error `Target class [sage.view] does not exist.`
+This can occur when the patched `acorn` library is installed, FSE is enabled, but no FSE-specific files being available in the theme.
+
 ### The Gutenberg Editor page loads, but stays blank! 😮
 This happens when the backend sends an unexpected response (invalid JSON (so also just frontend HTML)) or no response. The Gutenberg Editor [currently catches any JSON parse errors and silently stops initializing](https://github.com/WordPress/gutenberg/issues/45170) (staying blank). 
 Adding or changing the order of template loaders can cause this, hence this example Sage 10 FSE theme uses a patched version of the Sage theme `acorn` runtime that does not respond [with a matching Blade-PHP non-block template](https://github.com/roots/acorn/issues/228).
