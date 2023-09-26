@@ -23,7 +23,7 @@ On a `roots.io` Bedrock site you usually would add the plugin to the Bedrock sit
 6. Invoke `npm run build`.
 7. (Mount the theme into a WordPress site and activate it).
 8. Open the Site Editor:
-  - Admin area → `Appearance` → `Editor (beta)`
+  - Admin area → `Appearance` → `Editor` (not `beta` anymore).
   - (Logged in as `editor`+) → Front end → Admin bar → `Edit site`
 
 ## Theme structure
