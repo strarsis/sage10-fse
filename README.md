@@ -7,7 +7,7 @@
 - `templates/` directory, `index.html` and `theme.json` (see the [FSE-specific theme files](#theme-structure) below).
 
 ### Optional
-- The [Gutenberg Plugin](https://wordpress.org/plugins/gutenberg/) is not required, but adds extra Gutenberg-specific functionality that is missed otherwise in WordPress core.
+- The [Gutenberg Plugin](https://wordpress.org/plugins/gutenberg/) is not required, but adds extra Gutenberg-specific functionality. With earlier WordPress core versions, FSE was not supported and the Gutenberg plugin was required for FSE features, now FSE support is part of WordPress core. Using the Gutenberg plugin allows to "lock-in" a specific Gutenberg version, ensuring base styles and DOM staying the same for the theme. On the other hand, an additional plugin has to be used and maintained in relation to theme adjustments.
 On a `roots.io` Bedrock site you usually would add the plugin to the Bedrock site (not the theme!) `composer.json` as a [WPackagist dependency](https://wpackagist.org/search?q=gutenberg&type=plugin).
 
 ## Please note
