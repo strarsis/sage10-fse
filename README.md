@@ -87,6 +87,10 @@ Note: In block templates those blocks have markup as `<!-- wp:post-comment`.
 The [`Disable Blog Plugin`](https://wordpress.org/plugins/disable-blog/) may cause this as it can also remove the blog-/post-specific core blocks.
 Note: In block templates those blocks have markup as `<!-- wp:post-title`.
 
+### Template part suddenly not found after switching theme
+Template parts can be locked [to a specific theme](https://github.com/search?q=repo%3Astrarsis%2Fsage10-fse+path%3Atemplates%2F+%5C%22theme%5C%22%3A%5C%22sage10-&type=code). This is useful when non-generic parts are used that are specific to a theme. 
+Generic parts (`header`; `footer`), with no theme enforced, would automatically remap when switching themes. But when generic parts are locked to a specific theme, they will not be found when switching to another theme.
+
 ### PHP error `Target class [sage.view] does not exist.`
 This can occur when the patched `acorn` library is installed, FSE is enabled, but no FSE-specific files being available in the theme.
 
