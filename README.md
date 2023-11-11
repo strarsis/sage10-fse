@@ -16,6 +16,7 @@ On a `roots.io` Bedrock site you usually would add the plugin to the Bedrock sit
 ## Theme installation
 
 1. Clone this repository.
+(Note: If you are already having a parent repository above this theme (as often done with a Bedrock site), you may want to either manage the theme separately (e.g. submodule) or remove the git repo folder of theme to manage it in the parent repository, as it had been created like a plain Sage 10 theme using `composer create-project`).
 2. Invoke `composer install`.
 3. (Optional) Ensure suitable `node` version, e.g. using `nvm` from the `.nvmrc` by invoking `nvm install && nvm use`.
 4. Invoke either `npm install` or `yarn install` (`npm install -g yarn` for installing/updating yarn classic (`1.x`)).
