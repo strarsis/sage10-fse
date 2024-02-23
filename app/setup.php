@@ -41,9 +41,6 @@ add_action('after_setup_theme', function () {
     // enqueue app editor-only styles, extracted from app frontend styles
     $relEditorAppOnlyCssPath = asset('editor/app.css')->relativePath(get_theme_file_path());
     add_editor_style($relEditorAppOnlyCssPath);
-
-    // also enqueue standalone editor-specific styles
-    bundle('editor')->enqueue();
 });
 
 /**
