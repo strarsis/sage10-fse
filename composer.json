@@ -38,15 +38,9 @@
       "App\\": "app/"
     }
   },
-  "repositories": [
-    {
-      "url": "https://github.com/strarsis/acorn",
-      "type": "vcs"
-    }
-  ],
   "require": {
-    "php": "^8.0",
-    "roots/acorn": "dev-patch-1"
+    "php": "^8.1",
+    "roots/acorn": "4.1.0"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "3.7.1"
