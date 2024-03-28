@@ -114,3 +114,4 @@ Also the aforementioned [disabling FSE using `remove_theme_support('block-templa
 ### The FSE theme template is not used, but something else (classic) Blade-PHP template files instead
 With `acorn` >=`4.1.0` FSE support has been added, and with it (Classic) Blade-PHP template files have precedence over FSE templates.
 See [this section](#acorn-410-built-in-fse-support--classicfse-template-priority) about template file priority.
+The priority may be changed by adjusting the template loading logic in `acorn`. [There are some ideas and a possible, planned additional package](https://github.com/roots/acorn/pull/314) about this.
