@@ -3,7 +3,7 @@
 ## Requirements
 - Compatible `acorn`
   - `acorn` >=`4.1.0` with official FSE support (now used by this theme) 
-  - or, previously a [patched `roots/acorn` package](https://github.com/roots/acorn/pull/141).
+  - or previously, a [patched `roots/acorn` package](https://github.com/roots/acorn/pull/141).
 - `remove_theme_support('block-templates')` must be absent, as FSE will not work otherwise (important).
 - `templates/` directory, `index.html` and `theme.json` (see the [FSE-specific theme files](#theme-structure) below).
 
