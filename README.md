@@ -18,8 +18,8 @@ On a `roots.io` Bedrock site you usually would add the plugin to the Bedrock sit
 With `acorn` release `4.1.0` FSE templates are supported. (Classic) Blade-PHP template files (in `views/`) take precedence over FSE template files.
 This is in contrast to to the patched `acorn` previously used by this theme.
 For this reason the `views/` directory was renamed to `views-classic/`, to prevent any classic (Blade-PHP) template files overriding the FSE template files.
-If you want to use a (classic) Blade-PHP template file for some post types/pages/etc., put 
-the corresponding (classic) Blade-PHP file into `views/` (create directory if needed), or move those files from `views-classic/` into it.
+If you want to use a (classic) Blade-PHP template file for some post types/pages/etc. or plugins that do not support FSE/shortcodes yet (a "hybrid" FSE theme), 
+put the corresponding (classic) Blade-PHP file into `views/` (create directory if needed), or move those files from `views-classic/` into it.
 
 ## Theme installation
 1. Clone this repository.
