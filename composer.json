@@ -40,7 +40,7 @@
   },
   "require": {
     "php": "^8.1",
-    "roots/acorn": "4.1.0"
+    "roots/acorn": "4.2.1"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "3.7.1"
