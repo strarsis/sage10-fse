@@ -28,15 +28,12 @@ add_action('enqueue_block_editor_assets', function () {
 
 /*
  * Add frontend styles as editor styles.
- * Must be added by relative path (not remote URI)
- * (@see https://core.trac.wordpress.org/ticket/55728#ticket).
  *
  * @return void
  */
 add_action('after_setup_theme', function () {
     // add app frontend styles as editor styles
-    $relAppCssPath = asset('app.css')->relativePath(get_theme_file_path());
-    add_editor_style($relAppCssPath);
+    bundle('app')->editorStyles();
 
     // enqueue app editor-only styles, extracted from app frontend styles
     $relEditorAppOnlyCssPath = asset('editor/app.css')->relativePath(get_theme_file_path());
