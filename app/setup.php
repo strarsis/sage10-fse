@@ -47,18 +47,6 @@ add_action('after_setup_theme', function () {
  */
 add_action('after_setup_theme', function () {
     /**
-     * Enable features from the Soil plugin if activated.
-     *
-     * @link https://roots.io/plugins/soil/
-     */
-    add_theme_support('soil', [
-        'clean-up',
-        'nav-walker',
-        'nice-search',
-        'relative-urls',
-    ]);
-
-    /**
      * Disable full-site editing support.
      *
      * @link https://wptavern.com/gutenberg-10-5-embeds-pdfs-adds-verse-block-color-options-and-introduces-new-patterns
