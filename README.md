@@ -61,6 +61,13 @@ themes/your-theme-name/          # → Root of your Sage based theme
 ├── resources/views/             # → (Classic) Blade-PHP template files, overriden by FSE template files (`acorn` >=`4.2.0`), previously overrode FSE template files (`acorn` `4.1.0`)
 ```
 
+## Gutenberg styles and initial (tailwind/normalize/reset) styles order priority
+Adding the initial (tailwind/normalize/reset) styles to frontend styles (and as such as editor styles) can cause issues with Gutenberg core styles being overriden by those initial styles.
+To allow the Gutenberg core styles to override the initial styles (tailwind/normalize/reset) styles, those initial styles have to be enqueued separately and before the Gutenberg core styles.
+This branch contains an example for correctly enqueuing those initial tailwind styles by moving their corresponding link element above the Gutenberg core styles.
+This may not completely fix issues with the styles in editor, as editor styles are added as text of a style-element, which in HTML comes after the block-editor styles (as `block-editor/content.css`).
+
+
 ## Notes
 
 - You can [register the frontend styles as editor styles](https://github.com/strarsis/sage10-fse/blob/master/app/setup.php#L35-L40), then Gutenberg Editor will automatically post-process those styles and wrap all selectors in `.editor-styles-wrapper` for proper styles isolation (which prevents those frontend styles leaking into the editor UI itself). The editor styles are added as they are/were added to the TinyMCE editor (WordPress Classic Editor).

@@ -14,7 +14,12 @@ use function Roots\bundle;
  * @return void
  */
 add_action('wp_enqueue_scripts', function () {
-    bundle('app')->enqueue();
+    // initial (as tailwind/normalize/reset) styles enqueued separately from theme main styles,
+    // as it must be enqueued before Gutenberg Global styles
+    bundle('initial')->enqueue();
+
+    // main theme styles, depend on initial (tailwind/normalize/reset) styles (@see `bud` config)
+    bundle('app')->enqueue(); // depends on initial
 }, 100);
 
 /**
@@ -35,10 +40,39 @@ add_action('after_setup_theme', function () {
     // add app frontend styles as editor styles
     bundle('app')->editorStyles();
 
+    bundle('initial')->editorStyles();
+
+
     // enqueue app editor-only styles, extracted from app frontend styles
     $relEditorAppOnlyCssPath = asset('editor/app.css')->relativePath(get_theme_file_path());
     add_editor_style($relEditorAppOnlyCssPath);
 });
+
+
+// Move the initial (as tailwind/normalize/reset) styles of theme before the Gutenberg Global styles (`global-styles(-inline-css)`),
+// so they can be overriden by Gutenberg theme styles
+function move_initial_styles_before_gutenberg_global_styles($styles)
+{
+    $globalStylesHook  = 'global-styles';
+    $initialStylesHook = 'initial/0';
+
+    $initialStylesIndex = array_search($initialStylesHook, $styles, true); // index before the splicing!
+    if ($initialStylesIndex === false) { // strict `false` check
+        return $styles; // no initial styles enqueued, skip
+    }
+    unset($styles[$initialStylesIndex]);
+
+    $globalStylesIndex = array_search($globalStylesHook, $styles, true);
+    if ($globalStylesIndex === false) { // strict `false` check
+        return $styles; // skip, otherwise `array_splice` can remove the wrong styles
+    }
+    array_splice($styles, $globalStylesIndex, 0, $initialStylesHook);
+
+    return $styles;
+}
+add_action('print_styles_array', __NAMESPACE__ . '\\move_initial_styles_before_gutenberg_global_styles', 9999);
+
+
 
 /**
  * Register the initial theme setup.
