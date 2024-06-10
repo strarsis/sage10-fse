@@ -1377,7 +1377,8 @@
     },
     {
       "name": "example",
-      "title": "Generic example"
+      "title": "Generic example",
+      "area": "uncategorized"
     }
   ]
 }
