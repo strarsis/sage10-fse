@@ -92,7 +92,7 @@ export default async (app) => {
       {
         "name": "example",
         "title": "Generic example",
-        "area": "uncategorized", // (default is `uncategorized`)
+        "area": "uncategorized", // (default is `uncategorized`, its label is `General`)
       },
     ])
 
