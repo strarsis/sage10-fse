@@ -64,8 +64,8 @@ themes/your-theme-name/          # → Root of your Sage based theme
 ## Gutenberg styles and initial (tailwind/normalize/reset) styles order priority
 Adding the initial (tailwind/normalize/reset) styles to frontend styles (and as such as editor styles) can cause issues with Gutenberg core styles being overriden by those initial styles.
 To allow the Gutenberg core styles to override the initial styles (tailwind/normalize/reset) styles, those initial styles have to be enqueued separately and before the Gutenberg core styles.
-This branch contains an example for correctly enqueuing those initial tailwind styles by moving their corresponding link element above the Gutenberg core styles.
-This may not completely fix issues with the styles in editor, as editor styles are added as text of a style-element, which in HTML comes after the block-editor styles (as `block-editor/content.css`).
+This branch contains an example for correctly enqueuing those initial tailwind styles by moving their corresponding link element above the Gutenberg core styles, which fixes those issues on frontend.
+This may not completely fix issues with the styles in editor, as editor styles are added as text of a singular style-element, which in HTML also is declared after the block-editor styles (as `block-editor/content.css`).
 
 
 ## Notes
