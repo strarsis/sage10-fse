@@ -70,7 +70,7 @@ This allows the theme to be agnostic towards the technique with which the Gutenb
 - Disabling FSE using `remove_theme_support('block-templates')` is ignored when block templates are in place, `Design → Editor` is still offered to the user. – But this will currently result in an [unexpected, non-JSON-, HTML-response for `_wp-find-template`](https://github.com/WordPress/gutenberg/issues/45170#issuecomment-1287434694), preventing the Gutenberg Editor from initializing, hence the Gutenberg Editor page stays blank.
 - Block styles currently can not be registered by convention (as by adding them as files into a specific folder, using meta data as comments/JSON, as this is already possible with block patterns). – Currently block styles can only be registered using [`register_block_style`](https://developer.wordpress.org/reference/functions/register_block_style/) (in server-side PHP; recommended `init` action hook) or [`registerBlockStyle`](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-styles/) (in editor JavaScript). This can change with future releases of Gutenberg and WordPress core.
 - Get the translation source strings using the WP CLI [`i18n`](https://developer.wordpress.org/cli/commands/i18n/), as this tool is able to parse not only the normal core PHP WordPress translation functions, but also all the metadata in `theme.json`; Block patterns and Block parts for color, font-size, block part names, etc. – And recently it can also parse [Blade-PHP template files](https://github.com/wp-cli/i18n-command/pull/304). Sage 10 already uses these for its [translation-related `npm` scripts](https://github.com/strarsis/sage10-fse/blob/master/package.json#L14).
-- In case you are wondering why no page header/footer is visible, this depends on the WordPress Reading settings (`Your latest post` or `A static page` under `Settings` → `Reading` → `Your homepage displays`).
+- In case you are wondering why no page header/footer is visible, this depends on the WordPress Reading settings (`Your latest post` or `A static page` under `Settings` → `Reading` → `Your homepage displays`) and whether (classic) Blade-PHP templates files are also existing to be used as fallback.
 - You can easily add SCSS/SASS (+ PostCSS) support, just apply the [adjustments](https://github.com/strarsis/sage10-scss/commits/master) made to the [Sage 10 SCSS](https://github.com/strarsis/sage10-scss) theme.
 - The great [`bud-wp-editor-query`](https://github.com/talss89/bud-wp-editor-query) plugin allows to add editor-specific styles directly in the frontend styles, using a custom and valid CSS media query syntax. An example is included in the [`app.css`](https://github.com/strarsis/sage10-fse/blob/master/resources/styles/app.css#L6-L12).
 - With `acorn` >=`4.1.0` FSE support has been added, and with it (Classic) Blade-PHP template files have precedence over FSE templates. See [this section](#acorn-410-built-in-fse-support--classicfse-template-priority) about template file priority.
@@ -96,6 +96,10 @@ From that sidebar the block templates and template parts lists can be viewed and
 This was a gotcha for me, as I first had not completely understood the exact difference between those two.
 This very well made article explains the differences:
 https://davidsutoyo.com/articles/difference-front-page-php-home-php/
+
+#### No header/footer template part shown
+Note that albeit the `index.html` would be utltimatively used when there are no other templates – but there are also (classic) Blade-PHP template files which would be used instead.
+Either a FSE template alternative have to be added or those (classic) Blade-PHP templates files be removed.
 
 ### Gutenberg Editor/JavaScript errors like `Block "core/post-comments" is not registered` (for _comment_-specific core blocks)
 The [`Disable Comments Plugin`](https://wordpress.org/plugins/disable-comments/) may cause this as it can also remove the comment-specific core blocks.
