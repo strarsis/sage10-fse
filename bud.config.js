@@ -103,7 +103,7 @@ export default async (app) => {
         // description currently not supported (@see https://github.com/WordPress/gutenberg/issues/44097)
       },
     ])
-
+    .enable()
 
     .useTailwindColors()
     .useTailwindFontFamily()
