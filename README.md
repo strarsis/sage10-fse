@@ -121,6 +121,9 @@ This happens when the backend sends an unexpected response (invalid JSON (so als
 Adding or changing the order of template loaders can cause this, hence this example Sage 10 FSE theme uses a patched version of the Sage theme `acorn` runtime that does not respond [with a matching Blade-PHP non-block template](https://github.com/roots/acorn/issues/228).
 Also the aforementioned [disabling FSE using `remove_theme_support('block-templates')` in a FSE theme](https://github.com/WordPress/gutenberg/issues/45170#issuecomment-1287434694) causes this.
 
+### `theme.json` not updated or not generated
+`wpjson` requires an `enable()` for generating a `theme.json` file. This `enable()` is not required when the tailwind-specific methods are also invoked (`useTailwind...()`). So when tailwind is removed from the theme, `enable()` must be present for `theme.json` to be generated.
+
 ### The FSE theme template is not used, but something else (classic) Blade-PHP template files instead
 With `acorn` `4.1.0` FSE support has been added, and with it (Classic) Blade-PHP template files have precedence over FSE templates.
 See [this section](#acorn-410-built-in-fse-support--classicfse-template-priority) about template file priority.
